@@ -2,7 +2,7 @@ package Aufgabe_1;
 
 public class DVD extends Article {
 	final double vat = 0.19;
-	private enum COUNTRYCODE {de, at;};
+	enum COUNTRYCODE {de, at;};
 	
 	private String name;
 	private int duration;
