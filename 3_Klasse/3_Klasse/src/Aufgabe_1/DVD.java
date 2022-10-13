@@ -8,6 +8,8 @@ public class DVD extends Article {
 	private int duration;
 	private COUNTRYCODE countryCode;
 	
+	
+	
 	public DVD(double articleNumber, double price, int duration, String name, COUNTRYCODE countryCode) {
 		super(articleNumber, price);
 		this.name = name;
