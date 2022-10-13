@@ -10,5 +10,6 @@ public class Shoppingcart {
 		
 		DVD item2 = new DVD(123456,34.99,20,"IronMan",COUNTRYCODE.at);
 		shoppingCart.add(item2);
-	}
+		
+System.out.println("Hallo");	}
 }
