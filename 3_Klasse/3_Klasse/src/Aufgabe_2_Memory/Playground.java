@@ -1,7 +1,5 @@
 package Aufgabe_2_Memory;
 
-import javax.smartcardio.Card;
-
 public class Playground {
 	private Card[][] cards;
 	private int whosOnTurn;
@@ -16,5 +14,18 @@ public class Playground {
 		this.nrPairs = nrPairs;
 	}
 	
+	public void init() {
+		
+	}
 	
+	/**
+	 * @return true wenn alle Paare ufgedeckt wurden
+	 */
+	public Card play() {
+		return null;
+	}
+	
+	public boolean finished() {
+		return false;
+	}
 }
