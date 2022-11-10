@@ -7,25 +7,47 @@ public class SpielFeld {
 							 3,3,3,
 							 4,4,
 							 5};
-	
+	static boolean dir;
+	static int dirInt;
+	static int posX;
+	static int posY;
 	public static void main(String[] args) {
 		baseField();
 		
-		int posX = (int)(Math.random()*10);
-		int posY = (int)(Math.random()*10);
-		Schiffe k = new Schiffe(posX,posY,true,1,length[1]);
-		
-		for (int i = 0; i < k.getLength(); i++) {
-			if(k.isDir()) {
-				spielFeld[k.getPosX() + i][k.getPosY()] = k.getIndex();
+		createVariables();
+		Schiffe ship1 = new Schiffe(posX,posY,dir,length[0],length[0]);
+
+		for (int i = 0; i < ship1.getLength(); i++) {
+			if(ship1.isDir()) {
+				spielFeld[ship1.getPosX() + i][ship1.getPosY()] = ship1.getIndex();
 			}else {
-				spielFeld[k.getPosX()][k.getPosY() + i] = k.getIndex();
+				spielFeld[ship1.getPosX()][ship1.getPosY() + i] = ship1.getIndex();
+			}
+		}
+		
+		createVariables();
+		Schiffe ship2 = new Schiffe(posX,posY,dir,length[7],length[7]);
+		
+		for (int i = 0; i < ship2.getLength(); i++) {
+			if(ship1.isDir()) {
+				spielFeld[ship2.getPosX() + i][ship2.getPosY()] = ship2.getIndex();
+			}else {
+				spielFeld[ship2.getPosX()][ship2.getPosY() + i] = ship2.getIndex();
 			}
 		}
 		showField();
 	}
 
-
+	private static void createVariables() {
+		posX = (int)(Math.random()*10);
+		posY = (int)(Math.random()*10);
+		dirInt = (int)(Math.random()*2);
+		if(dirInt == 0) {
+			dir = true;
+		} else {
+			dir = false;
+		}
+	}
 
 	private static void showField() {
 		for (int i = 0; i < spielFeld.length; i++) {
