@@ -13,7 +13,7 @@ public class SpielFeld {
 		
 		int posX = (int)(Math.random()*10);
 		int posY = (int)(Math.random()*10);
-		Schiffe k = new Schiffe(posX,posY,false,1,length[1]);
+		Schiffe k = new Schiffe(posX,posY,true,1,length[1]);
 		
 		for (int i = 0; i < k.getLength(); i++) {
 			if(k.isDir()) {
@@ -43,9 +43,7 @@ public class SpielFeld {
 		for (int i = 0; i < spielFeld.length; i++) {
 			for (int j = 0; j < spielFeld[i].length; j++) {
 				spielFeld[i][j] = 0;
-				System.out.printf(" %d",spielFeld[i][j]);
 			}
-			System.out.println();
 		}
 	}
 }
