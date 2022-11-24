@@ -122,7 +122,7 @@ public class SpielFeld {
 		int lengthIndex7 = 2;
 		testShip(lengthIndex7);
 		// crating ship
-		Schiffe ship3 = new Schiffe(posX, posY, dir, length[lengthIndex3], length[lengthIndex3]);
+		Schiffe ship3 = new Schiffe(posX, posY, dir, length[lengthIndex7], length[lengthIndex7]);
 
 		for (int i = 0; i < ship3.getLength(); i++) {
 			if (ship3.isDir()) {
@@ -168,6 +168,8 @@ public class SpielFeld {
 		boolean shipOk = true;
 		while (shipOk) {
 			createVariables();
+
+			// test if ship is inbounds
 			while ((posY > length[lengthIndex] && !dir) || (posX > length[lengthIndex] && dir)) {
 				createVariables();
 			}
@@ -190,6 +192,37 @@ public class SpielFeld {
 					}
 				}
 			}
+
+			// test if ship is isolated
+//			for (int i = 0; i < length[lengthIndex] + 2; i++) {
+//				if (dir) {
+//					try {
+//						if (spielFeld[posX + i][posY] == 0 && spielFeld[posX + i][posY + 1] == 0
+//								&& spielFeld[posX + i][posY - 1] == 0) {
+//							shipOk = false;
+//							throw new IndexOutOfBoundsException();
+//						} else {
+//							shipOk = true;
+//							break;
+//						}
+//					} catch (Exception e) {
+//						shipOk = false;
+//					}
+//				} else {
+//					try {
+//						if (spielFeld[posX][posY + i] == 0 && spielFeld[posX + 1][posY + i] == 0
+//								&& spielFeld[posX - 1][posY + i] == 0) {
+//							shipOk = false;
+//							throw new IndexOutOfBoundsException();
+//						} else {
+//							shipOk = true;
+//							break;
+//						}
+//					} catch (Exception e) {
+//						shipOk = false;
+//					}
+//				}
+//			}
 		}
 	}
 
