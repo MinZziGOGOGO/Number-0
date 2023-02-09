@@ -2,6 +2,7 @@ package Aufgabe_4_File;
 
 import java.io.File;
 import java.sql.Date;
+import java.util.Arrays;
 
 public class Aufgaben_Files {
 
@@ -16,8 +17,12 @@ public class Aufgaben_Files {
 			long lastModified = contents[i].lastModified();
 			Date date = new Date(lastModified);
 
-			String extension = contents[i].toPath().toString().substring(contents[i].toString().indexOf("."));
-			
+			String[] p =contents[i].getName().split("\\.");
+            String extension = "";
+            if (p.length > 1)
+            {
+                extension = p[p.length-1];
+            }
 			ausgabe(contents, i, size, date, extension);
 		}
 		System.out.printf("Amount of Files in the Directory: %d", contents.length);
