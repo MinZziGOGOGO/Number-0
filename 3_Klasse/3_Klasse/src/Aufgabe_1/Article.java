@@ -7,7 +7,6 @@ public class Article {
 	public Article(double articleNumber, double price) {
 		this.articleNumber = articleNumber;
 		this.price = price;
-		System.out.println();
 	}
 
 	public double getPrice() {
